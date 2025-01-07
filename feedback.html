@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="profile-pic">
+            <img src="perfil2.png" alt="Perfil de Anajara Lucas">
+        </div>
+        <div class="profile-info">
+            <h1>Anajara Lucas</h1>
+            <p>Associate Software Developer - Metadados</p>
+            <div class="social-icons">
+                <a href="https://github.com/Anajaraa" target="_blank">
+                    <img src="git.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/anajaraa/" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="apresentacao.html">Home</a>
+            <a href="index.html">Skills</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="experiencia.html">Experiência e Formação</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </aside>
+    
+
+    <main class="feedback">
+        <h2>Deixe seu Feedback</h2>
+        <form id="feedbackForm">
+            <label for="rating">Nota:</label>
+            <select id="rating">
+                <option value="1">1</option>
+                <option value="5">5</option>
+            </select>
+            <label for="comment">Comentário:</label>
+            <textarea id="comment"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <canvas id="feedbackChart"></canvas>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
