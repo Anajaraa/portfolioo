@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+    <title>Feedback - Anajara Lucas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-   
+    <link rel="stylesheet" href="feedback.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <aside class="sidebar">
@@ -25,31 +27,118 @@
             </div>
         </div>
         <nav class="nav-links">
-            <a href="apresentacao.html">Home</a>
-            <a href="index.html">Skills</a>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
             <a href="projetos.html">Projetos</a>
             <a href="experiencia.html">Experiência e Formação</a>
             <a href="feedback.html">Feedback</a>
         </nav>
     </aside>
-    
 
-    <main class="feedback">
-        <h2>Deixe seu Feedback</h2>
-        <form id="feedbackForm">
-            <label for="rating">Nota:</label>
-            <select id="rating">
-                <option value="1">1</option>
-                <option value="5">5</option>
-            </select>
-            <label for="comment">Comentário:</label>
-            <textarea id="comment"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-        <canvas id="feedbackChart"></canvas>
+    <main class="feedback-container">
+        <section class="rating-section">
+            <h2 class="section-title">Avaliações</h2>
+            <div class="chart-container">
+                <canvas id="ratingChart"></canvas>
+            </div>
+            <div class="rating-form">
+                <h3>Avalie este portfólio</h3>
+                <div class="rating-buttons">
+                    <button onclick="submitRating('Bom')" class="rating-btn good">Bom</button>
+                    <button onclick="submitRating('Regular')" class="rating-btn regular">Regular</button>
+                    <button onclick="submitRating('Ruim')" class="rating-btn bad">Ruim</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="section-title">Entre em Contato</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" required placeholder="Nome">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" required placeholder="Telefone">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" required placeholder="Mensagem"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Enviar</button>
+                    <a href="https://wa.me/5551991195983" class="whatsapp-btn" target="_blank">
+                        Enviar por WhatsApp
+                    </a>
+                </div>
+            </form>
+        </section>
     </main>
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <footer>
+        <p class="fo">Anajara M. Lucas - 2024</p>
+        <p class="fo">Sapucaia do Sul/RS</p>
+        <p class="fo">Contato: <a href="mailto:anajaramlucas@gmail.com">anajaramlucas@gmail.com</a></p>
+    </footer>
+
+    <script>
+        // Initialize chart
+        const ctx = document.getElementById('ratingChart').getContext('2d');
+        let ratings = {
+            'Bom': parseInt(localStorage.getItem('ratingBom')) || 0,
+            'Regular': parseInt(localStorage.getItem('ratingRegular')) || 0,
+            'Ruim': parseInt(localStorage.getItem('ratingRuim')) || 0
+        };
+
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Bom', 'Regular', 'Ruim'],
+                datasets: [{
+                    label: 'Avaliações',
+                    data: Object.values(ratings),
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(255, 99, 132, 0.6)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+
+        function submitRating(rating) {
+            const key = `rating${rating}`;
+            ratings[rating]++;
+            localStorage.setItem(key, ratings[rating]);
+            chart.data.datasets[0].data = Object.values(ratings);
+            chart.update();
+        }
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Send email (you'll need to set up an email service)
+            const mailtoLink = `mailto:anajaramlucas@gmail.com?subject=Contato do Portfólio&body=Nome: ${name}%0D%0ATelefone: ${phone}%0D%0AEmail: ${email}%0D%0AMensagem: ${message}`;
+            window.location.href = mailtoLink;
+        });
+    </script>
 </body>
 </html>

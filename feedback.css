@@ -1,0 +1,139 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ... same sidebar styles as other pages ... */
+
+.feedback-container {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: calc(100vh - 80px);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #00ff88);
+}
+
+.rating-section, .contact-section {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.chart-container {
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.rating-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.rating-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.rating-btn:hover {
+    transform: translateY(-3px);
+}
+
+.rating-btn.good { background: #4bc0c0; }
+.rating-btn.regular { background: #ffce56; }
+.rating-btn.bad { background: #ff6384; }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.submit-btn, .whatsapp-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: #fff;
+}
+
+.whatsapp-btn {
+    background: #25d366;
+    color: #fff;
+}
+
+.submit-btn:hover, .whatsapp-btn:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .feedback-container {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+}

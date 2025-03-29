@@ -4,101 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos - Anajara Lucas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
-}
-
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('bg2.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    display: flex;
-    align-items: stretch;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-.projects {
-    margin-left: 270px; /* Espaço reservado para a sidebar */
-    padding: 20px;
-    max-width: calc(100% - 270px); /* Limita o conteúdo ao espaço disponível */
-    overflow: hidden; /* Evita que o conteúdo exceda os limites */
-}
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste automático baseado no espaço */
-    gap: 20px;
-    justify-items: center; /* Centraliza os cards horizontalmente */
-}
-
-.card {
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s;
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-.card p {
-    font-size: 14px;
-    color: #b3b3b3;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.futuro-projeto {
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 320px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.futuro-projeto img {
-    width: 80%;
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    .projects {
-        margin-left: 0; /* Remove a margem lateral em telas menores */
-        padding: 10px;
-    }
-
-    .cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapta o layout para dispositivos menores */
-    }
-}
-
-
-    </style>
+    <link rel="stylesheet" href="projects.css">
 </head>
-<body >
+<body>
     <aside class="sidebar">
         <div class="profile-pic">
             <img src="perfil2.png" alt="Perfil de Anajara Lucas">
@@ -118,8 +28,8 @@ body {
             </div>
         </div>
         <nav class="nav-links">
-            <a href="apresentacao.html">Home</a>
-            <a href="index.html">Skills</a>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
             <a href="projetos.html">Projetos</a>
             <a href="experiencia.html">Experiência e Formação</a>
             <a href="feedback.html">Feedback</a>
@@ -127,45 +37,37 @@ body {
     </aside>
     
     <main class="projects">
-        <h2>Meus Projetos</h2>
+        <h2 class="section-title">Meus Projetos</h2>
         <div class="cards-container">
-            <div class="card">
-                <img src="projetos/pj1.jpg" alt="Projeto 1">
-                <h3>Bootstrap</h3>
-                <p>Página desenvolvida com Bootstrap. <a href="https://anajaraa.github.io/projeto_bootstrap_soulcode/">Ver Projeto</a></p>
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="projetos/pj1.jpg" alt="Projeto Bootstrap">
+                    <div class="card-overlay">
+                        <a href="https://anajaraa.github.io/projeto_bootstrap_soulcode/" class="btn btn-light" target="_blank">Ver Projeto</a>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Bootstrap</h3>
+                    <p>Página desenvolvida com Bootstrap</p>
+                    <div class="tech-tags">
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <img src="projetos/pj2.jpg" alt="Projeto 2">
-                <h3>   Flexbox</h3>
-                <p>Projeto usando Flexbox para layout responsivo.  <a href="https://code-tech-one.vercel.app/">Ver Projeto</a></p>
-            </div>
-            <div class="card">
-                <img src="projetos/pj3.jpg" alt="Projeto 3">
-                <h3>                <h3>    CSS e Grid</h3>
-            </h3>
-                <p>Projeto usando grid para layout responsivo. <a href="https://code-tech-one.vercel.app/">Ver Projeto</a></p>
-            </div>
-            <div class="card">
-                <img src="projetos/pj4.jpg" alt="Projeto 2">
-                <h3>Flexbox</h3>
-                <p>Projeto usando Flexbox para layout responsivo. <a href="https://code-tech-one.vercel.app/">Ver Projeto</a></p>
-            </div>
-            <div class="card">
-                <img src="projetos/pj5.jpg" alt="Projeto 2">
-                <h3>Flexbox</h3>
-                <p>Projeto usando Flexbox para layout responsivo. <a href="https://code-tech-one.vercel.app/">Ver Projeto</a></p>
-            </div>
-            <div class="card">
-                <img src="projetos/pj6.jpg" alt="Projeto 2">
-                <h3>Flexbox</h3>
-                <p>Projeto usando Flexbox para layout responsivo. <a href="https://code-tech-one.vercel.app/">Ver Projeto</a></p>
-            </div>
+            <!-- Repeat similar structure for other cards -->
         </div>
     </main>
-    <footer>
-        <p class="fo">Anajara M. Lucas - 2024</p>
-        <p class="fo">Sapucaia do Sul/RS</p>
-        <p class="fo">Contato: <a href="mailto:anajaramlucas@gmail.com">anajaramlucas@gmail.com</a></p>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Anajara M. Lucas - 2024</p>
+            <p>Sapucaia do Sul/RS</p>
+            <p>Contato: <a href="mailto:anajaramlucas@gmail.com">anajaramlucas@gmail.com</a></p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
