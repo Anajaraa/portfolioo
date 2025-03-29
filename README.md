@@ -28,7 +28,7 @@ Este portfolio foi desenvolvido utilizando HTML, CSS e JavaScript puros, com o o
 
 #### Contato
 - 📱 (51)99119-5983
-- 📧 anahaluk2@yahoo.com.br
+- 📧 anainhaluks@yahoo.com.br
 - 📍 Sapucaia do Sul/RS - BR
 - 💻 Github/Anajara
 
