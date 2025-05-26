@@ -61,7 +61,11 @@
 .nav-links {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     gap: 0;
+=======
+    gap: 1rem;
+>>>>>>> c207d1ecf12e047c647d60c187f7470a1430df27
     width: 100%;
 }
 
